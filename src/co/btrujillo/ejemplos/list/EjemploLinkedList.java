@@ -1,9 +1,10 @@
-package co.btrujillo.ejemplos.set;
+package co.btrujillo.ejemplos.list;
 
 import co.btrujillo.ejemplos.modelo.Alumno;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 
 public class EjemploLinkedList {
@@ -21,7 +22,7 @@ public class EjemploLinkedList {
         enlazada.add(new Alumno("Brandon", 3));
 
         enlazada.set(4, new Alumno("Brandon", 2));
-        enlazada.addFirst(new Alumno("Angela", 1));
+        enlazada.addFirst(new Alumno("Poseidon", 1));
         enlazada.addLast(new Alumno("Afrodita", 11));
         System.out.println(enlazada + " size = " +enlazada.size() );
 
@@ -32,6 +33,33 @@ public class EjemploLinkedList {
 
         System.out.println("Primer dato: " + enlazada.getFirst());
         System.out.println("Ultimo dato: " + enlazada.getLast());
-        System.out.println("Por indice: " + enlazada.get(2));
+        System.out.println("Por indice 2: " + enlazada.get(2));
+
+        Alumno primero =enlazada.removeFirst();
+        enlazada.removeLast();
+
+        System.out.println(enlazada);
+        System.out.println("Primero eliminado: " + primero);
+
+        Alumno a = new Alumno("Pascual",8);
+        enlazada.addLast(a);
+        System.out.println("indice Lucas: " + enlazada.indexOf(a));
+        enlazada.remove(1);
+        System.out.println("indice Lucas: " + enlazada.indexOf(a));
+        System.out.println(enlazada);
+
+        enlazada.set(enlazada.indexOf(a)-1, new Alumno("Valentino",5));
+        System.out.println(enlazada);
+
+        ListIterator<Alumno> li= enlazada.listIterator();
+
+        while(li.hasNext()){
+            System.out.println(li.next());
+        }
+        while (li.hasPrevious()){
+            System.out.println(li.previous());
+        }
+
+
     }
 }

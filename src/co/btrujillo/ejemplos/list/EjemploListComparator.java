@@ -1,4 +1,4 @@
-package co.btrujillo.ejemplos.set;
+package co.btrujillo.ejemplos.list;
 
 import co.btrujillo.ejemplos.modelo.Alumno;
 
